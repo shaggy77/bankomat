@@ -23,27 +23,29 @@ public class bankomat
                     }
 
                 case 2:
+                     do {
                     for (int wydrukujmeni = 0; wydrukujmeni <= n; wydrukujmeni = s.nextInt()) {
                         System.out.println("Podaj kwotę:");
                         int x = s.nextInt();
                         if (x > saldo.getStankonta()) {
                             System.out.println("Nie masz wystarczających środków na koncie. Wpisz ponownie kwotę:");
                             saldo.Menu();
-                            continue;
+
                         } else {
                             System.out.println("wypłacasz " + x + " złotych");
                             System.out.println("Na twoim koncie pozostało: " + saldo.setStankonta(saldo.stankonta - x));
                             saldo.Menu();
-                            continue;
                         }
-                        //System.out.println("Na twoim koncie pozostało: " + saldo.setStankonta(saldo.stankonta - x));
-                        //saldo.Menu();
                     }
+                     }
+                     while ( n == 3);
 
 
                 case 3:
-                    System.out.println("Dziękuję. Odbierz kartę.");
-                    break;
+                        System.out.println("Dziękuję. Odbierz kartę.");
+                        break;
+
+
             }
         } else {
             System.out.println("Niewłaściwy PIN. Spróbój ponownie");
